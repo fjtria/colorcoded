@@ -9,20 +9,26 @@
 <body>
     <h1>Colorcoded</h1>
 
-    <div class="dropdown">
-        <label for="input-type">Input Type</label>
-        <select name="input-type" id="input-type">
-            <option value="hex">HEX</option>
-            <option value="rgb">RGB</option>
-            <option value="cmyk">CMYK</option>
-            <option value="hsl">HSL</option>
-
-        </select>
+    <div class="input-bar">
+        <div class="dropdown">
+            <label for="input-type">Input Type</label>
+            <select name="input-type" id="input-type">
+                <option value="hex">HEX</option>
+                <option value="rgb">RGB</option>
+                <option value="cmyk">CMYK</option>
+                <option value="hsl">HSL</option>
+            </select>
+        </div>
+        <div class="text-box">
+            <label for="input" id="input-label">Enter a color value:</label>
+            <input type="text" id="input" placeholder="Enter a color value" aria-labelledby="input-label" />
+        </div>
+        <button id="convert-button" aria-label="Convert the input color">Convert</button>
     </div>
     
-    <input type="text" id="input" placeholder="Enter HEX code (e.g. #03F)" />
-    <button onclick="convertHEX()">Convert</button>
+
     <div id="output"></div>
+
     <script src="./index.js"></script>
 </body>
 </html>
