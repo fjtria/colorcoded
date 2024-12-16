@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorcoded</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1>Colorcoded</h1>
+
+    <div class="dropdown">
+        <label for="input-type">Input Type</label>
+        <select name="input-type" id="input-type">
+            <option value="hex">HEX</option>
+            <option value="rgb">RGB</option>
+            <option value="cmyk">CMYK</option>
+            <option value="hsl">HSL</option>
+
+        </select>
+    </div>
+    
+    <input type="text" id="input" placeholder="Enter HEX code (e.g. #03F)" />
+    <button onclick="convertHEX()">Convert</button>
+    <div id="output"></div>
+    <script src="./index.js"></script>
+</body>
+</html>
