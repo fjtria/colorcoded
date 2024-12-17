@@ -28,6 +28,10 @@
     font-weight: 500;
 }
 
+#hacked:hover {
+    cursor: pointer;
+}
+
 .header p {
     font-weight: 300;
 }
