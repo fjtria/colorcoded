@@ -191,15 +191,43 @@ function rgbToHSL({ red, green, blue }) {
     return { hue: h, saturation: Math.round(s * 100), lightness: Math.round(l * 100) };
 }
 
-// Format output
+// Output
 function displayOutput(hex, rgb, cmyk, hsl) {
+    // Format output
     output.innerHTML = `
         ${hex ? `<p>HEX: ${hex}</p>` : ""}
         ${rgb ? `<p>RGB: rgb(${rgb.red}, ${rgb.green}, ${rgb.blue})</p>` : ""}
         ${cmyk ? `<p>CMYK: cmyk(${cmyk[0]}%, ${cmyk[1]}%, ${cmyk[2]}%, ${cmyk[3]}%)</p>` : ""}
         ${hsl ? `<p>HSL: hsl(${hsl.hue}, ${hsl.saturation}%, ${hsl.lightness}%)</p>` : ""}
     `;
+
+    // Update background
+    const background = document.querySelector(":root");
+    const title = document.querySelector(".header");
+    
+    if (hex) {
+        background.style.backgroundColor = hex; // Use HEX
+    } else if (rgb) {
+        background.style.backgroundColor = `rgb(${rgb.red}, ${rgb.green}, ${rgb.blue})`; // Use RGB
+    } else if (hsl) {
+        background.style.backgroundColor = `hsl(${hsl.hue}, ${hsl.saturation}%, ${hsl.lightness}%)`; // Use HSL
+    } else {
+        background.style.backgroundColor = ""; // Reset on invalid input
+    }
+
+    /// Determine contrast color and update text
+    const bgColor = getComputedStyle(background).backgroundColor;
+    const contrastColor = getContrastColor(bgColor);
+    title.style.color = contrastColor;
 }
+
+// Determine contrasting text color
+function getContrastColor(bgColor) {
+    const rgb = bgColor.match(/\d+/g).map(Number);
+    const brightness = (0.299 * rgb[0]) + (0.587 * rgb[1]) + (0.114 * rgb[2]);
+    return brightness > 128 ? "#000000" : "#FFFFFF"; // Black text on light, white text on dark
+}
+
 
 // Format error message
 function displayError(message) {
