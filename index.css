@@ -66,11 +66,15 @@
 }
 
 .input-bar select, button {
-    width: 8rem;
+    width: 8vw;
+}
+
+.input-bar select:hover, button:hover {
+    cursor: pointer;
 }
 
 .input-bar input {
-    width: 40rem;
+    width: 40vw;
 }
 
 .dropdown label {
@@ -82,7 +86,7 @@
 }
 
 #output {
-    padding-left: 11rem;
+    padding: 1rem;
 }
 
 @font-face {
