@@ -36,6 +36,10 @@
     font-weight: 300;
 }
 
+.header a:visited {
+    color: inherit;
+}
+
 .converter {
     padding: 1rem;
     min-width: 60vw;
