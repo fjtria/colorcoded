@@ -37,6 +37,7 @@ function changeColorMode() {
 
     // Text field placeholder
     const placeholders = {
+        none: "Select a color format to convert from",
         hex: "#005A9C",
         rgb: "rgb(0, 90, 156)",
         cmyk: "cmyk(100%, 42%, 0%, 39%)",
@@ -86,7 +87,7 @@ convertButton.addEventListener("click", () => {
     if (hex || rgb || cmyk || hsl) {
         displayOutput(hex, rgb, cmyk, hsl);
     } else {
-        displayError("Invalid input! Please enter a valid color format.");
+        displayError("Invalid input");
     }
 });
 

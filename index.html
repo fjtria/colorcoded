@@ -4,45 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="./assets/images/code.svg" />
-    <title>Colorcoded – Color Code Converter</title>
+    <title>COLORCODED – Color Converter</title>
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <div class="container">
-
-        <div class="header">
-            <h1>&lt; <span id="hacked" data-value="Colorcoded">Colorcoded</span> &gt;</h1>
-            <p>Easily convert between HEX, RGB, CMYK, and HSL.</p>
-            <a href="https://github.com/fjstria/colorcoded" target='_blank' rel='noopener noreferrer'>View Source</a>
-        </div>
-    
-        <div class="converter"> 
-            <div class="input-bar">
-
-                <div class="dropdown">
-                    <label for="input-type">Input Type</label>
-                    <select name="input-type" id="input-type">
-                        <option value="hex">HEX</option>
-                        <option value="rgb">RGB</option>
-                        <option value="cmyk">CMYK</option>
-                        <option value="hsl">HSL</option>
-                    </select>
-                </div>
-
-                <div class="text-box">
-                    <label for="input" id="input-label">Enter a color value:</label>
-                    <input type="text" id="input" placeholder="Enter a color value" aria-labelledby="input-label" />
-                </div>
-                <div class="button-container">
-                    <button id="convert-button" aria-label="Convert the input color">Convert</button>
-                </div>
-            </div>   
-
-            <div id="output"></div>
-        </div>
-    
+    <div class="header">
+        <h1>&lt; <span id="hacked" data-value="COLORCODED">COLORCODED</span> &gt;</h1>
+        <p>Color conversions between HEX, RGB, CMYK, and HSL formats.</p>
     </div>
 
+    <div class="converter">
+        <div id="inputs">
+            <div class="dropdown">
+                <label for="input-type">Input Type</label>
+                <select name="input-type" id="input-type">
+                    <option value="none">Select format</option>
+                    <option value="hex">HEX</option>
+                    <option value="rgb">RGB</option>
+                    <option value="cmyk">CMYK</option>
+                    <option value="hsl">HSL</option>
+                </select>
+            </div>
+    
+            <div class="text-box">
+                <label for="input" id="input-label">Enter a color value:</label>
+                <input type="text" id="input" placeholder="Enter a color value" aria-labelledby="input-label" />
+            </div>
+    
+            <div class="button-container">
+                <button id="convert-button" aria-label="Convert color!">Convert color!</button>
+            </div>
+        </div>
+
+        <div id="output"></div>
+    </div>
     <script src="./index.js"></script>
 </body>
 </html>
