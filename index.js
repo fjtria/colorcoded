@@ -1,5 +1,5 @@
 // Hacked Text Effect: https://codepen.io/Hyperplexed/full/rNrJgrd
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 let interval = null;
 document.querySelector("#hacked").onmouseover = event => {  
     let iteration = 0;  
@@ -11,14 +11,14 @@ document.querySelector("#hacked").onmouseover = event => {
             if(index < iteration) {
                 return event.target.dataset.value[index];
             }
-            return letters[Math.floor(Math.random() * 26)]
+            return letters[Math.floor(Math.random() * 52)]
         })
         .join("");
         if(iteration >= event.target.dataset.value.length){ 
             clearInterval(interval);
         }
         iteration += 1 / 3;
-    }, 35);
+    }, 45);
 }
 
 // DOM Elements
