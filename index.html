@@ -10,38 +10,40 @@
 <body>
     <div class="header">
         <h1>&lt; <span id="hacked" data-value="Colorcoded">Colorcoded</span> &gt;</h1>
-        <p>Color conversions between HEX, RGB, CMYK, and HSL formats.</p>
     </div>
 
-    <div class="converter">
-        <div id="inputs">
-            <div class="dropdown">
-                <label for="input-type">Input Type</label>
-                <select name="input-type" id="input-type">
-                    <option value="none">Convert from</option>
-                    <option value="hex">HEX</option>
-                    <option value="rgb">RGB</option>
-                    <option value="cmyk">CMYK</option>
-                    <option value="hsl">HSL</option>
-                </select>
-            </div>
+    <div class="selector">
+        <label for="input-type">Convert from</label>
+        <select name="input-type" id="input-type">
+            <option value="hex">HEX</option>
+            <option value="rgb">RGB</option>
+            <option value="cmyk">CMYK</option>
+            <option value="hsl">HSL</option>
+        </select>
+    </div>
     
+    <div class="converter">
+        <div class="inputs">
             <div class="text-box">
                 <label for="input" id="input-label">Enter a color value:</label>
                 <input type="text" id="input" placeholder="Enter a color value" aria-labelledby="input-label" />
             </div>
     
             <div class="button-container">
-                <button id="convert-button" aria-label="Convert color!">Convert color!</button>
+                <button id="convert-button" aria-label="Convert color">Convert</button>
             </div>
         </div>
 
-        <div id="output"></div>
+        <div class="preview">
+            <div id="output"></div>
+            <div id="color-preview"></div>
+        </div>
+
     </div>
 
     <div class="footer">
         <p>
-            v1.0.1 | Produced 2024-2025 by <a href="https://fjtria.dev/" rel="noopener noreferrer" target="_blank">@fjtria.dev</a>
+            v1.1.0 | Produced 2024-2025 by <a href="https://fjtria.dev/" rel="noopener noreferrer" target="_blank">@fjtria.dev</a>
         </p>
     </div>
     <script src="./index.js"></script>
