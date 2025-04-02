@@ -41,10 +41,10 @@ function changeColorMode() {
 
     // Text field placeholder
     const placeholders = {
-        hex: "#005A9C",
-        rgb: "rgb(0, 90, 156)",
-        cmyk: "cmyk(100%, 42%, 0%, 39%)",
-        hsl: "hsl(205, 100%, 31%)",
+        hex: "ex. #005A9C",
+        rgb: "ex. rgb(0, 90, 156)",
+        cmyk: "ex. cmyk(100%, 42%, 0%, 39%)",
+        hsl: "ex. hsl(205, 100%, 31%)",
     };
     inputField.placeholder = placeholders[selection];
     clearInputField();
