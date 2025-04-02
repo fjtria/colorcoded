@@ -108,20 +108,20 @@ text-decoration: underline;}
     background-color: white;
 }
 
-.preview {
+#output {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
 }
 
 @media screen and (min-width: 768px){
-    .preview {
+    #output {
         flex-direction: row;
         justify-content: space-between;
     }
 }
 
-.preview button {
+#output button {
     height: 24px;
     width: 48px;
     border: 1px solid gray;
