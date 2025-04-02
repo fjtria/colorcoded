@@ -27,6 +27,10 @@ const inputField = document.getElementById("input");
 const convertButton = document.getElementById("convert-button");
 const output = document.getElementById("output");
 
+function clearInputField() {
+    inputField.value = "";
+  }
+
 // Listen for dropdown selection change
 dropdown.addEventListener("change", changeColorMode);
 changeColorMode(); // Initialize default color mode
@@ -43,7 +47,16 @@ function changeColorMode() {
         hsl: "hsl(205, 100%, 31%)",
     };
     inputField.placeholder = placeholders[selection];
+    clearInputField();
 }
+
+// Listen for enter key press
+inputField.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      convertButton.click();
+      clearInputField();
+    }
+  });
 
 // Pass to correct conversion mode
 convertButton.addEventListener("click", () => {
@@ -88,6 +101,8 @@ convertButton.addEventListener("click", () => {
     } else {
         displayError("Invalid input!");
     }
+
+    clearInputField();
 });
 
 // HEX
@@ -218,10 +233,11 @@ function rgbToHSL({ red, green, blue }) {
 function displayOutput(hex, rgb, cmyk, hsl) {
     // Format output
     output.innerHTML = `
-      ${hex ? `<p><button class="copy-button" data-value="${hex}">Copy</button> HEX: ${hex}</p>` : ""}
-      ${rgb ? `<p><button class="copy-button" data-value="rgb(${rgb.red}, ${rgb.green}, ${rgb.blue})">Copy</button> RGB: rgb(${rgb.red}, ${rgb.green}, ${rgb.blue})</p>` : ""}
-      ${cmyk ? `<p><button class="copy-button" data-value="cmyk(${cmyk[0]}%, ${cmyk[1]}%, ${cmyk[2]}%, ${cmyk[3]}%)">Copy</button> CMYK: cmyk(${cmyk[0]}%, ${cmyk[1]}%, ${cmyk[2]}%, ${cmyk[3]}%)</p>` : ""}
-      ${hsl ? `<p><button class="copy-button" data-value="hsl(${hsl.hue}, ${hsl.saturation}%, ${hsl.lightness}%)">Copy</button> HSL: hsl(${hsl.hue}, ${hsl.saturation}%, ${hsl.lightness}%)</p>` : ""}
+        ${hex ? `<p><button class="copy-button" data-value="${hex}">Copy</button> HEX: ${hex}</p>` : ""}
+        ${rgb ? `<p><button class="copy-button" data-value="rgb(${rgb.red}, ${rgb.green}, ${rgb.blue})">Copy</button> RGB: rgb(${rgb.red}, ${rgb.green}, ${rgb.blue})</p>` : ""}
+        ${cmyk ? `<p><button class="copy-button" data-value="cmyk(${cmyk[0]}%, ${cmyk[1]}%, ${cmyk[2]}%, ${cmyk[3]}%)">Copy</button> CMYK: cmyk(${cmyk[0]}%, ${cmyk[1]}%, ${cmyk[2]}%, ${cmyk[3]}%)</p>` : ""}
+        ${hsl ? `<p><button class="copy-button" data-value="hsl(${hsl.hue}, ${hsl.saturation}%, ${hsl.lightness}%)">Copy</button> HSL: hsl(${hsl.hue}, ${hsl.saturation}%, ${hsl.lightness}%)</p>` : ""}
+        <div id="color-preview"></div>
     `;
   
     // Add event listeners to copy buttons

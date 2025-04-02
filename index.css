@@ -103,7 +103,7 @@ text-decoration: underline;}
 .converter .text-box label { display: none; }
 
 .converter button {
-    height: 36px;
+    height: 34px;
     width: 100px;
     background-color: white;
 }
@@ -160,6 +160,10 @@ text-decoration: underline;}
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+.error {
+    color: red;
 }
 
 @font-face {
