@@ -16,7 +16,7 @@ text-decoration: underline;}
 .header {
     color: white;
     text-align: center;
-    padding: 4rem 0;
+    padding: 4rem 0 3rem 0;
 }
 
 .header h1 { 
@@ -86,12 +86,18 @@ text-decoration: underline;}
     font-family: JetBrainsMono, monospace;
     border: 1px solid gray;
     border-radius: 0.25rem;
+    transition: 0.3s;
 }
 
 .converter input {
     height: 32px;
     width: 250px;
     padding: 0 0.5rem;
+}
+
+.converter input:focus {
+    outline: none;
+    border-color: royalblue;
 }
 
 @media screen and (min-width: 768px){
@@ -127,12 +133,22 @@ text-decoration: underline;}
     border: 1px solid gray;
     border-radius: 0.25rem;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+#output button:hover, .converter button:hover {
+    text-decoration: none;
+}
+
+#output button:active, .converter button:active {
+    background-color: lightblue;
+    border-color: royalblue ;
 }
 
 #color-preview {
     width: 100px;
     height: 100px;
-    background-color: white;
+    border: 1px solid gray;
     border-radius: 0.25rem;
 }
 
@@ -144,6 +160,7 @@ text-decoration: underline;}
 }
 
 .footer {
+    padding-top: 1rem;
     font-size: 0.875rem;
     display: flex;
     justify-content: center;
@@ -163,7 +180,7 @@ text-decoration: underline;}
 }
 
 .error {
-    color: red;
+    color: indianred;
 }
 
 @font-face {
